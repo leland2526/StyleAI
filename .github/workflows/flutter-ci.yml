@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  build:
+  analyze:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -25,8 +25,47 @@ jobs:
       - name: Analyze
         run: flutter analyze
 
+  web:
+    needs: analyze
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          flutter-version: '3.24.0'
+
+      - name: Install dependencies
+        run: flutter pub get
+
       - name: Build Web
         run: flutter build web
+
+      - name: Upload Web build
+        uses: actions/upload-artifact@v4
+        with:
+          name: web-build
+          path: build/web
+          retention-days: 7
+
+  android:
+    needs: analyze
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          flutter-version: '3.24.0'
+
+      - name: Install dependencies
+        run: flutter pub get
 
       - name: Build Android APK
         run: flutter build apk --debug
@@ -34,5 +73,6 @@ jobs:
       - name: Upload Android APK
         uses: actions/upload-artifact@v4
         with:
-          name: apk
+          name: android-apk
           path: build/app/outputs/flutter-apk/app-debug.apk
+          retention-days: 7
