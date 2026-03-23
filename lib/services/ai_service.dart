@@ -125,7 +125,7 @@ class AiService {
 
   /// 使用OpenAI进行真实识别（需要配置API Key）
   Future<AiRecognitionResult?> recognizeWithOpenAI(String imageBase64) async {
-    if (_openAiKey.isEmpty) {
+    if (_openAiKey == null || _openAiKey!.isEmpty) {
       debugPrint('OpenAI API key not configured, using simulation');
       return null;
     }

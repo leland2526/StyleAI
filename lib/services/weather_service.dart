@@ -66,11 +66,8 @@ class WeatherService {
       }
 
       return await Geolocator.getCurrentPosition(
-        locationSettings: const LocationSettings(
-          accuracy: LocationAccuracy.low,
-          timeLimit: Duration(seconds: 10),
-        ),
-      );
+        desiredAccuracy: LocationAccuracy.low,
+      ).timeout(const Duration(seconds: 10));
     } catch (e) {
       return null;
     }
