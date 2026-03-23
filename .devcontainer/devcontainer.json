@@ -1,0 +1,31 @@
+{
+  "name": "StyleAI Flutter",
+  "image": "mcr.microsoft.com/devcontainers/flutter:1-3.3",
+  "features": {
+    "ghcr.io/devcontainers/features/android-sdk:1": {}
+  },
+  "forwardPorts": [3000, 8080],
+  "portsAttributes": {
+    "3000": {
+      "label": "Flutter Devtools",
+      "onAutoForward": "openPreview"
+    },
+    "8080": {
+      "label": "Flutter Web",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "settings": {
+    "flutter.sdkPath": "/opt/flutter",
+    "[dart]": {
+      "formatter.lineLength": 120
+    },
+    "editor.formatOnSave": true,
+    "editor.rulers": [120]
+  },
+  "postCreateCommand": "flutter doctor",
+  "extensions": [
+    "dart-code.flutter",
+    "dart-code.dart-code"
+  ]
+}

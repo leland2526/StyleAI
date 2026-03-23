@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  flutter:
+    build: .
+    container_name: styleai_flutter
+    volumes:
+      - .:/app
+      - flutter_pub_cache:/root/.pub-cache
+    working_dir: /app
+    ports:
+      - "8080:8080"
+      - "3000:3000"
+    stdin_open: true
+    tty: true
+    command: /bin/bash
+
+volumes:
+  flutter_pub_cache:
