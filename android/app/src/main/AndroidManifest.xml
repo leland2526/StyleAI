@@ -36,6 +36,7 @@
             </intent-filter>
         </activity>
 
+        <!-- Flutter嵌入方式配置 -->
         <meta-data
             android:name="flutterEmbedding"
             android:value="2"/>
