@@ -46,7 +46,6 @@ dependencies:
 
   # 功能库
   permission_handler: ^11.0.1
-  connectivity_plus: ^6.0.1
   logger: ^2.0.2
   intl: ^0.18.1
 
