@@ -25,7 +25,6 @@ class WeatherData {
     final main = json['main'] as Map<String, dynamic>;
     final weather = (json['weather'] as List).first as Map<String, dynamic>;
     final wind = json['wind'] as Map<String, dynamic>;
-    final sys = json['sys'] as Map<String, dynamic>;
 
     return WeatherData(
       location: json['name'] as String? ?? '未知',

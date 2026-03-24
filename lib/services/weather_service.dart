@@ -31,8 +31,24 @@ class WeatherService {
     return _getDefaultWeather();
   }
 
+  /// 默认天气（无网络时使用）
+  WeatherData _getDefaultWeather() {
+    return WeatherData(
+      location: '北京',
+      temp: 22,
+      tempMin: 18,
+      tempMax: 26,
+      condition: '晴',
+      conditionCode: '01d',
+      humidity: 50,
+      windSpeed: 3.0,
+      timestamp: DateTime.now(),
+    );
+  }
+
   /// 清除缓存
   void clearCache() {
     _cachedWeather = null;
     _lastFetchTime = null;
   }
+}
