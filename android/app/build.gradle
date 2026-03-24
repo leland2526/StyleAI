@@ -55,13 +55,6 @@ android {
     }
 }
 
-// Expose flutter variables for plugins
-project.ext {
-    set('flutter.compileSdkVersion', 34)
-    set('flutter.targetSdkVersion', 34)
-    set('flutter.ndkVersion', "25.1.8937393")
-}
-
 flutter {
     source '../..'
 }

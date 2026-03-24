@@ -22,4 +22,13 @@ plugins {
     id "org.jetbrains.kotlin.android" version "1.9.0" apply false
 }
 
+// Provide flutter.compileSdkVersion to all subprojects
+gradle.beforeProject {
+    project.ext {
+        set('flutter.compileSdkVersion', 34)
+        set('flutter.targetSdkVersion', 34)
+        set('flutter.ndkVersion', "25.1.8937393")
+    }
+}
+
 include ":app"
