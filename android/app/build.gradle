@@ -42,8 +42,8 @@ android {
 
     defaultConfig {
         applicationId "com.styleai.styleai"
-        minSdkVersion 21
-        targetSdkVersion 34
+        minSdkVersion flutter.minSdkVersion?.toInteger() ?: 21
+        targetSdkVersion flutter.targetSdkVersion?.toInteger() ?: 34
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
