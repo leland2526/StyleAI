@@ -50,9 +50,6 @@ dependencies:
   logger: ^2.0.2
   intl: ^0.18.1
 
-  # Supabase后端
-  supabase_flutter: ^1.10.4
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
