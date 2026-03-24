@@ -39,9 +39,9 @@ class SupabaseService {
 
   /// Sign in with Apple
   Future<AuthResponse> signInWithApple() async {
-    return await Supabase.instance.client.auth.signInWithIdToken(
-      provider: Provider.apple,
-    );
+    // Note: Apple Sign In requires additional setup
+    // This is a placeholder - implement with proper Apple ID token
+    throw UnimplementedError('Apple Sign In requires additional setup');
   }
 
   /// Sign out
