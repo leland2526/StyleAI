@@ -64,9 +64,6 @@ jobs:
           channel: 'stable'
           flutter-version: '3.24.0'
 
-      - name: Clear old geolocator cache
-        run: rm -rf ~/.pub-cache/hosted/pub.dev/geolocator_android-4.6.2
-
       - name: Install dependencies
         run: |
           flutter pub get
