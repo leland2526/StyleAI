@@ -25,7 +25,7 @@ jobs:
       - name: Install iOS dependencies
         run: |
           flutter precache --ios
-          pod install --repo-update --project-directory=ios
+          cd ios && pod install --repo-update
 
       - name: Build iOS (Simulator)
         run: flutter build ios --simulator --no-codesign
