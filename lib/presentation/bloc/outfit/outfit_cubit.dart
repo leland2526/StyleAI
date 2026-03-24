@@ -1,7 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
 import '../../../data/models/outfit/outfit.dart';
-import '../../../data/models/wardrobe/clothing_item.dart';
 import '../../../data/repositories/outfit_repository.dart';
 import '../../../data/repositories/wardrobe_repository.dart';
 import '../../../services/ai_service.dart';
